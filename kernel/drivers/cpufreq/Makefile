@@ -28,6 +28,7 @@ obj-$(CONFIG_CPU_FREQ_GOV_BADASS)	+= cpufreq_badass.o
 obj-$(CONFIG_CPU_FREQ_GOV_LAZY)		+= cpufreq_lazy.o
 obj-$(CONFIG_CPU_FREQ_GOV_SUPERBAD)	+= cpufreq_superbad.o
 obj-$(CONFIG_CPU_FREQ_GOV_DARKSIDE)	+= cpufreq_darkside.o
+obj-$(CONFIG_CPU_FREQ_GOV_INTELLIDEMAND2) += cpufreq_intellidemand2.o
 
 obj-$(CONFIG_CPU_FREQ_GOV_SCREEN)	+= cpufreq_screen.o
 
