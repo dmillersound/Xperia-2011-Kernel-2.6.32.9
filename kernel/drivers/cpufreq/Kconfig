@@ -87,6 +87,26 @@ config CPU_FREQ_DEFAULT_GOV_USERSPACE
 	  program shall be able to set the CPU dynamically without having
 	  to enable the userspace governor manually.
 
+config CPU_FREQ_DEFAULT_GOV_LULZACTIVE
+	bool "lulzactive"
+	select CPU_FREQ_GOV_LULZACTIVE
+	select CPU_FREQ_GOV_PERFORMANCE
+	help
+	  Use the CPUfreq governor 'lulzactive' as default.
+
+config CPU_FREQ_DEFAULT_GOV_VIRTUOUS
+        bool "virtuous"
+        select CPU_FREQ_GOV_VIRTUOUS
+        help
+          Use the CPUFreq governor 'virtuous' as default.
+
+config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
+	bool "intellidemand"
+	select CPU_FREQ_GOV_INTELLIDEMAND
+	select CPU_FREQ_GOV_PERFORMANCE
+	help
+	  Use the CPUFreq governor 'intellidemand' as default.
+
 config CPU_FREQ_DEFAULT_GOV_ONDEMAND
 	bool "ondemand"
 	select CPU_FREQ_GOV_ONDEMAND
@@ -226,6 +246,79 @@ config CPU_FREQ_GOV_USERSPACE
 	  For details, take a look at <file:Documentation/cpu-freq/>.
 
 	  If in doubt, say Y.
+
+config CPU_FREQ_GOV_LAZY
+	tristate "'lazy' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'Lazy' - a "smart" not so lazy governor.
+	  
+	  If in doubt, say N.
+
+config CPU_FREQ_GOV_BADASS
+	tristate "'badass' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'badass' - This driver adds a dynamic cpufreq policy governor.
+	  The governor does a periodic polling and
+	  changes frequency based on the CPU utilization.
+	  The support for this governor depends on CPU capability to
+	  do fast frequency switching (i.e, very low latency frequency
+	  transitions).
+
+	  If in doubt, say N.
+
+config CPU_FREQ_GOV_INTELLIDEMAND
+	tristate "'Intellidemand' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'Intellidemand' - a "smart" optimized governor for the hero.
+
+	  If in doubt, say N.
+
+config CPU_FREQ_GOV_LULZACTIVE
+	tristate "'Lulzactive' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'Lulzactive' - a "smart" optimized governor for the hero!
+
+	  If in doubt, say N.
+
+config CPU_FREQ_GOV_VIRTUOUS
+        tristate "'virtuous' cpufreq governor"
+        depends on CPU_FREQ
+        help
+          'virtuous' - A conservatice based governor
+
+          If in doubt, say N.
+
+config CPU_FREQ_GOV_LIONHEART
+  	tristate "'lionheart' cpufreq governor"
+  	depends on CPU_FREQ
+	help
+	  'lionheart' - like a "beast" for a lion.
+
+	  If in doubt, say N.
+
+config CPU_FREQ_GOV_ONDEMANDX
+	tristate "'ondemandX' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	'ondemandX' - a "smart" optimized governor for the hero!
+
+	If in doubt, say N.
+
+config CPU_FREQ_GOV_SUPERBAD
+	tristate "'superbad' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'superbad' - a "superbad" super smooth rendition of a highly 		optimized "smartass" governor!
+
+config CPU_FREQ_GOV_DARKSIDE
+	tristate "'darkside' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'darkside' - a "slightly more agressive smart" optimized governor!
 
 config CPU_FREQ_GOV_ONDEMAND
 	tristate "'ondemand' cpufreq policy governor"
