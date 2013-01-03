@@ -74,15 +74,8 @@
 /* The following flags affect the page allocator grouping pages by mobility */
 #define SLAB_RECLAIM_ACCOUNT	0x00020000UL		/* Objects are reclaimable */
 #define SLAB_TEMPORARY		SLAB_RECLAIM_ACCOUNT	/* Objects are short-lived */
-
-<<<<<<< HEAD
-/* Following flags should only be used by allocator specific flags */  	
-#define SLAB_ALLOC_PRIVATE  0x000000ffUL
-
-=======
 /* Following flags should only be used by allocator specific flags */
 #define SLAB_ALLOC_PRIVATE  0x000000ffUL
->>>>>>> b1d892f... Added SLQB Memory Allocator
 /*
  * ZERO_SIZE_PTR will be returned for zero sized kmalloc requests.
  *
