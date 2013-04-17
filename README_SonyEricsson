@@ -1,4 +1,6 @@
 Configuration files can be found in arch/arm/configs.
+Firmware = 4.0.2.A.0.62
+Kernel version = 2.6.32.9
 
 Xperia PLAY => semc_zeus_defconfig
 Xperia arc => semc_anzu_defconfig
