@@ -8,8 +8,12 @@ STRIP=$HOME/toolchains/arm-eabi-linaro-4.7.2/bin/arm-eabi-strip
 MKBOOTFS=$TOOLS_DIR/mkbootfs
 MKBOOTIMG=$TOOLS_DIR/mkbootimg
 
-
 clear
+
+# unpack ramdisk to current directory
+if [ ! -d ./ramdisk_zeus ]; then
+	lzcat ./ramdisk.cpio.lzma | cpio -i
+fi
 
 echo
 echo "Cleaning from previous build.."
